@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VZGadgets</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-color: #FFFFFF;
+            --secondary-color: #000;
+            --text-color: #FFFFFF;
+            --accent-color: #444;
+            --hover-color: #777;
+            --box-shadow-color: rgba(255, 255, 255, 0.2);
+            --transition-duration: 0.3s;
         }
 
         body {
@@ -17,68 +20,99 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: #1E1E1E;
-            color: #fff;
-            text-align: center;
+            min-height: 100vh;
+            background: var(--secondary-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
             padding: 0 20px;
+            text-align: center;
+            position: relative;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: #00B7FF;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+            margin-bottom: 30px;
             text-transform: uppercase;
-            text-shadow: 0 3px 6px rgba(0, 183, 255, 0.3);
+            text-shadow: 0 4px 10px var(--box-shadow-color);
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .button-container {
             display: flex;
-            gap: 25px;
-            margin-bottom: 30px;
+            gap: 20px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .btn {
-            padding: 16px 32px;
-            font-size: 1.1rem;
-            color: #fff;
-            background: #007BFF;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+            transition: all var(--transition-duration) ease;
+            box-shadow: 0 6px 15px var(--box-shadow-color);
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+            background: linear-gradient(135deg, var(--hover-color), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--box-shadow-color);
+        }
+
+        .btn:hover::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
         }
 
         .btn:active {
             transform: translateY(0);
+            box-shadow: 0 4px 10px var(--box-shadow-color);
         }
 
         footer {
             position: absolute;
             bottom: 20px;
-            font-size: 1rem;
-            color: #aaa;
+            font-size: 0.9rem;
+            color: #AAA;
             font-weight: 400;
+            animation: fadeInUp 1.4s ease-in-out;
         }
 
         footer a {
-            color: #00B7FF;
+            color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color var(--transition-duration) ease;
         }
 
         footer a:hover {
-            color: #fff;
+            color: var(--hover-color);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>

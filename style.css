@@ -1,12 +1,13 @@
 :root {
-    --primary-color: #000000;
+    --primary-color: #121212; /* Darker background for a modern feel */
     --secondary-color: #FFFFFF;
-    --text-color: #000000;
-    --button-color: #FFFFFF;
-    --hover-button-color: #ff6347;
-    --glow-color: rgba(255, 255, 255, 0.8);
-    --hover-glow-color: rgba(255, 99, 71, 0.8);
-    --transition-duration: 0.3s;
+    --text-color: #FFFFFF; /* Light text for contrast */
+    --button-color: #333333; /* Dark buttons for a sleek look */
+    --hover-button-color: #FF6347; /* Tomato */
+    --glow-color: rgba(255, 255, 255, 0.6); /* Soft glow */
+    --hover-glow-color: rgba(255, 99, 71, 0.6); /* Hover glow */
+    --transition-duration: 0.4s;
+    --border-radius: 15px; /* Smoother edges for buttons */
 }
 
 body {
@@ -24,15 +25,15 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: var(--secondary-color);
     letter-spacing: -1px;
     margin-top: 20px;
     margin-bottom: 30px;
     text-transform: uppercase;
-    text-shadow: 0 4px 10px var(--glow-color);
-    animation: fadeInUp 1s ease-in-out;
+    text-shadow: 0 4px 20px var(--glow-color);
+    animation: fadeInUp 1.2s ease-in-out;
 }
 
 .button-container {
@@ -41,9 +42,9 @@ h1 {
     gap: 20px;
     justify-content: center;
     margin-bottom: 40px;
-    animation: fadeInUp 1.2s ease-in-out;
+    animation: fadeInUp 1.4s ease-in-out;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 .btn {
@@ -53,41 +54,78 @@ h1 {
     padding: 15px 35px;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     background: var(--button-color);
-    border: none;
-    border-radius: 50px;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
     cursor: pointer;
     transition: all var(--transition-duration) ease;
-    box-shadow: 0 0 25px var(--glow-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     position: relative;
     overflow: hidden;
     text-align: center;
     white-space: nowrap;
     width: 100%;
-    max-width: 200px;
+    max-width: 220px;
+    background: linear-gradient(145deg, #444444, #333333); /* Dark gradient effect */
+    transition: all var(--transition-duration) ease-in-out;
 }
 
+/* Button Hover Effects */
 .btn:hover {
-    color: var(--secondary-color);
     background-color: var(--hover-button-color);
-    box-shadow: 0 0 35px var(--hover-glow-color);
-    transform: translateY(-4px);
+    color: var(--secondary-color);
+    box-shadow: 0 0 30px var(--hover-glow-color);
+    transform: scale(1.05);
+    font-size: 1.1rem;
+    border: 2px solid var(--hover-button-color); /* Glow border */
 }
 
+/* Active (Click) Effects */
 .btn:active {
     transform: translateY(0);
     box-shadow: 0 0 20px var(--glow-color);
+    background-color: var(--hover-button-color);
+    border: 2px solid var(--hover-button-color);
+}
+
+/* Glowing Border for Buttons */
+.btn-1 {
+    background: linear-gradient(145deg, #FF6347, #FF4500);
+}
+.btn-2 {
+    background: linear-gradient(145deg, #32CD32, #228B22);
+}
+.btn-3 {
+    background: linear-gradient(145deg, #1E90FF, #4682B4);
+}
+.btn-4 {
+    background: linear-gradient(145deg, #FFD700, #FFA500);
+}
+.btn-5 {
+    background: linear-gradient(145deg, #8A2BE2, #6A5ACD);
+}
+.btn-6 {
+    background: linear-gradient(145deg, #FF4500, #FF6347);
+}
+.btn-7 {
+    background: linear-gradient(145deg, #D2691E, #8B4513);
+}
+
+/* Button Text Animation */
+.btn:hover span {
+    transform: translateX(5px); /* Subtle text slide */
+    opacity: 0.8;
 }
 
 footer {
     position: absolute;
     bottom: 20px;
     font-size: 0.9rem;
-    color: #AAA;
+    color: #888;
     font-weight: 400;
-    animation: fadeInUp 1.4s ease-in-out;
+    animation: fadeInUp 1.6s ease-in-out;
 }
 
 footer a {
@@ -103,7 +141,7 @@ footer a:hover {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -111,20 +149,23 @@ footer a:hover {
     }
 }
 
-/* Responsive styles */
+/* Responsive Styles */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
     }
+
     .button-container {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
     .btn {
         padding: 12px 30px;
         font-size: 0.9rem;
         max-width: 100%;
     }
+
     footer {
         font-size: 0.8rem;
     }

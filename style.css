@@ -119,22 +119,18 @@ h1 {
 }
 
 footer {
-    position: absolute;
-    bottom: 20px;
-    font-size: 0.9rem;
-    color: #888;
-    font-weight: 400;
-    animation: fadeInUp 1.6s ease-in-out;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Push the footer to the bottom */
 }
 
 footer a {
-    color: #1E90FF;
+    color: #007BFF;
     text-decoration: none;
-    transition: color var(--transition-duration) ease;
 }
 
 footer a:hover {
-    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 @keyframes fadeInUp {

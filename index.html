@@ -6,7 +6,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ES6RE24JWL');
 </script>
 <head>
@@ -249,11 +248,15 @@ details[open] summary {
     box-shadow: 0 0 20px var(--hover-glow-color);
     transform: scale(1.05);
 }
+
+.btn-suggestions:active {
+    transform: translateY(0);
+    box-shadow: 0 0 20px var(--hover-glow-color);
+}
 </style>
 <body>
-    <h1>VZGadgets</h1>
+    <h1 class="rainbow">VZGadgets</h1>
     
-    <!-- Games Category -->
     <details>
         <summary>Games</summary>
         <div class="button-container">
@@ -267,7 +270,6 @@ details[open] summary {
         </div>
     </details>
 
-    <!-- Casino Category -->
     <details>
         <summary>Casino</summary>
         <div class="button-container">
@@ -278,7 +280,6 @@ details[open] summary {
         </div>
     </details>
 
-    <!-- Utilities Category -->
     <details>
         <summary>Utilities</summary>
         <div class="button-container">

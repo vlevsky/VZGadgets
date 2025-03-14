@@ -249,56 +249,100 @@ details[open] summary {
     box-shadow: 0 0 20px var(--hover-glow-color);
 }
 
-/* Collapsible Button Style */
+/* Coming Soon Section */
 .collapsible {
-    background-color: #1a1a1a; /* Dark background */
-    color: #ffffff; /* White text */
+    background: linear-gradient(145deg, #2A2A2A, #1A1A1A);
+    color: var(--secondary-color);
     cursor: pointer;
-    padding: 12px;
+    padding: 15px 20px;
     width: 100%;
-    border: none;
+    max-width: 1200px;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
     text-align: left;
     outline: none;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 6px; /* Rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-}
-
-/* Hover and Active State */
-.collapsible:hover, .collapsible.active {
-    background-color: #333333; /* Slightly lighter dark shade */
-    color: #f1f1f1; /* Light gray text */
-}
-
-/* Content Style */
-.content {
-    padding: 0 18px;
-    display: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px 0;
+    transition: all var(--transition-duration) ease;
+    position: relative;
     overflow: hidden;
-    background-color: #2a2a2a; /* Dark background for content */
-    color: #e0e0e0; /* Light gray text */
-    border-radius: 0 0 6px 6px; /* Rounded bottom corners */
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth expansion */
+    box-shadow: 0 4px 15px var(--glow-color);
 }
 
-/* Optional: Add a subtle box-shadow for depth */
-.collapsible, .content {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.collapsible:hover {
+    background: linear-gradient(145deg, #1E90FF, #0073E6);
+    box-shadow: 0 0 30px var(--hover-glow-color);
+    transform: scale(1.02);
+    border: 2px solid var(--hover-button-color);
 }
 
-/* Optional: Add a small arrow icon to indicate collapsible state */
+.collapsible.active {
+    background: linear-gradient(145deg, #1E90FF, #0073E6);
+    box-shadow: 0 0 30px var(--hover-glow-color);
+    border: 2px solid var(--hover-button-color);
+}
+
 .collapsible::after {
     content: '\25BC'; /* Down arrow */
-    font-size: 12px;
-    color: #ffffff;
+    font-size: 1rem;
+    color: var(--secondary-color);
     float: right;
-    margin-left: 5px;
-    transition: transform 0.3s ease; /* Smooth arrow rotation */
+    margin-left: 10px;
+    transition: transform var(--transition-duration) ease;
 }
 
 .collapsible.active::after {
     transform: rotate(180deg); /* Rotate arrow when active */
+}
+
+.content {
+    padding: 0 20px;
+    display: none;
+    overflow: hidden;
+    background: var(--button-color);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 4px 15px var(--glow-color);
+    transition: all var(--transition-duration) ease;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content ul li {
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-duration) ease;
+}
+
+.content ul li:last-child {
+    border-bottom: none;
+}
+
+.content ul li:hover {
+    color: var(--hover-button-color);
+    transform: translateX(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .collapsible {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    .content ul li {
+        font-size: 0.9rem;
+    }
 }
 </style>
 <body>

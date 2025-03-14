@@ -322,3 +322,27 @@ details[open] summary {
         font-size: 0.9rem;
     }
 }
+
+.view-all-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: #222222;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    background: linear-gradient(145deg, #2A2A2A, #1A1A1A);
+}
+
+.view-all-button:hover {
+    background-color: #1E90FF;
+    box-shadow: 0 0 30px rgba(30, 144, 255, 0.8);
+    transform: scale(1.05);
+    border: 2px solid #1E90FF;
+}

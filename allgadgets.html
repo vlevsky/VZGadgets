@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="allgadgets.css">
+    <link rel="icon" type="image/png" href="/VZLogo.png">
+    <title>VZGadgets - All Gadgets</title>
+</head>
+<body>
+    <a href="index.html" class="back-button">Back to Home</a>
+    <h1>All VZGadgets</h1>
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search gadgets..." class="search-bar">
+    </div>
+    <div class="button-container" id="gadgetsList">
+        <!-- Gadgets will be dynamically populated here -->
+    </div>
+
+    <footer>Made with 💙 in the Bay Area, CA in 2025 | Contact Us: <a href="mailto:support@vzgadgets.com">support@vzgadgets.com</a></footer>
+
+    <script>
+        const gadgets = [
+            { name: "2048", link: "https://2048.vzgadgets.com/" },
+            { name: "APY (Interest) Calculator", link: "https://calculators.vzgadgets.com/apy.html" },
+            { name: "Baccarat", link: "https://baccarat.vzgadgets.com/" },
+            { name: "Basic Calculator", link: "basiccalculator.html" },
+            { name: "Basketball Scoreboard", link: "https://sports.vzgadgets.com/basketballscoreboard.html" },
+            { name: "Basketball Stats", link: "https://sports.vzgadgets.com/basketballstats.html" },
+            { name: "Bench 1RM (One Rep Max) Calculator", link: "https://calculators.vzgadgets.com/benchpress.html" },
+            { name: "Blackjack", link: "https://blackjack.vzgadgets.com/" },
+            { name: "BMI (Body Mass) Calculator", link: "https://calculators.vzgadgets.com/bmi.html" },
+            { name: "Body Fat Calculator", link: "https://calculators.vzgadgets.com/bodyfat.html" },
+            { name: "Budget Calculator", link: "https://calculators.vzgadgets.com/budget.html" },
+            { name: "Calories Calculator", link: "https://calculators.vzgadgets.com/calories.html" },
+            { name: "Checkers", link: "https://checkers.vzgadgets.com/" },
+            { name: "Connect 4", link: "https://connect4.vzgadgets.com/" },
+            { name: "Counter", link: "https://counter.vzgadgets.com/" },
+            { name: "Electoral Map", link: "https://electoralmap.vzgadgets.com/" },
+            { name: "Heart Rate Zone Calculator", link: "https://calculators.vzgadgets.com/heartratezone.html" },
+            { name: "Image Converter", link: "https://imageconverter.vzgadgets.com/" },
+            { name: "Math Quiz", link: "https://mathquiz.vzgadgets.com/" },
+            { name: "Memory Game", link: "https://memorygame.vzgadgets.com/" },
+            { name: "Mines", link: "https://mines.vzgadgets.com/" },
+            { name: "Money Visualizer", link: "https://moneyvisualizer.vzgadgets.com/" },
+            { name: "Password Gen & Strength Meter", link: "https://passwords.vzgadgets.com/" },
+            { name: "Pitch Logger", link: "https://sports.vzgadgets.com/pitchlogger.html" },
+            { name: "QR Code and Barcode Maker", link: "https://qrcode.vzgadgets.com/" },
+            { name: "Radar Gun", link: "https://sports.vzgadgets.com/radargun.html" },
+            { name: "Random Number Generator", link: "randomnumbers.html" },
+            { name: "Reaction Time Tester", link: "https://sports.vzgadgets.com/reactiontime.html" },
+            { name: "Roman Numeral Converter", link: "https://calculators.vzgadgets.com/romannumerals.html" },
+            { name: "Running Pace Calculator", link: "https://calculators.vzgadgets.com/runningpace.html" },
+            { name: "Slots", link: "https://slots.vzgadgets.com/" },
+            { name: "Space Bar CPS Counter", link: "https://spacebar.vzgadgets.com/" },
+            { name: "Spend Elon Musk's Money", link: "https://spendelonsmoney.vzgadgets.com/" },
+            { name: "Sports Gadgets", link: "https://sports.vzgadgets.com/" },
+            { name: "Square Root Calculator", link: "https://calculators.vzgadgets.com/squareroot.html" },
+            { name: "Text Counter", link: "https://calculators.vzgadgets.com/textcounter.html" },
+            { name: "Text to Speech Converter", link: "https://texttospeech.vzgadgets.com/" },
+            { name: "Tic Tac Toe", link: "https://tic-tac-toe.vzgadgets.com/" },
+            { name: "Time Difference Calculator", link: "https://calculators.vzgadgets.com/timedifference.html" },
+            { name: "Tip Calculator", link: "https://calculators.vzgadgets.com/tip.html" },
+            { name: "To-Do List", link: "https://todolist.vzgadgets.com/" },
+            { name: "Unit Converter", link: "https://converter.vzgadgets.com/" },
+            { name: "Water Intake Calculator", link: "https://calculators.vzgadgets.com/water.html" },
+            { name: "Whiteboard", link: "https://whiteboard.vzgadgets.com/" },
+            { name: "Wordle", link: "https://wordle.vzgadgets.com/" },
+            { name: "World Clock", link: "https://worldclock.vzgadgets.com/" }
+        ];
+
+        const gadgetsList = document.getElementById('gadgetsList');
+        const searchBar = document.getElementById('searchBar');
+
+        // Function to display gadgets
+        function displayGadgets(filteredGadgets) {
+            gadgetsList.innerHTML = '';
+            filteredGadgets.forEach(gadget => {
+                const button = document.createElement('a');
+                button.href = gadget.link;
+                button.className = 'btn';
+                button.textContent = gadget.name;
+                gadgetsList.appendChild(button);
+            });
+        }
+
+        // Initial display of all gadgets
+        displayGadgets(gadgets);
+
+        // Search functionality
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredGadgets = gadgets.filter(gadget => 
+                gadget.name.toLowerCase().includes(searchTerm)
+            );
+            displayGadgets(filteredGadgets);
+        });
+    </script>
+</body>
+</html>

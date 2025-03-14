@@ -22,6 +22,9 @@
 </head>
 
 <body>
+    <!-- View All Gadgets Button -->
+    <a href="all-gadgets.html" class="view-all-button">View All Gadgets</a>
+
     <h1>VZGadgets</h1>
     <details>
         <summary>Games</summary>
@@ -76,40 +79,40 @@
         </div>
     </details>
 
-<button type="button" class="collapsible">Coming Soon</button>
-<div class="content">
-    <ul>
-        <li>A Page that Displays All VZGadgets</li>
-        <li>HiLo, Dice Game, Coin Flip</li>
-        <li>Roulette, and other wheel games</li>
-        <li>Solitaire</li>
-        <li>All Casino Games to Have A Universal Balance</li>
-        <li>Fortune Cookie</li>
-        <li>Chess</li>
-        <li>Riddle Maker</li>
-        <li>Bingo</li>
-        <li>Moon Phase Calculator</li>
-        <li>Rock Paper Scissors</li>
-        <li>Stopwatch/Timer</li>
-    </ul>
-</div>
+    <button type="button" class="collapsible">Coming Soon</button>
+    <div class="content">
+        <ul>
+            <li>A Page that Displays All VZGadgets</li>
+            <li>HiLo, Dice Game, Coin Flip</li>
+            <li>Roulette, and other wheel games</li>
+            <li>Solitaire</li>
+            <li>All Casino Games to Have A Universal Balance</li>
+            <li>Fortune Cookie</li>
+            <li>Chess</li>
+            <li>Riddle Maker</li>
+            <li>Bingo</li>
+            <li>Moon Phase Calculator</li>
+            <li>Rock Paper Scissors</li>
+            <li>Stopwatch/Timer</li>
+        </ul>
+    </div>
 
-<script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-</script>
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 
     <div class="suggestions-section">
         <p>We love hearing from you! If you have any suggestions for new gadgets or improvements, please feel free to share them with us.</p>

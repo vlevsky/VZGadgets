@@ -248,6 +248,58 @@ details[open] summary {
     transform: translateY(0);
     box-shadow: 0 0 20px var(--hover-glow-color);
 }
+
+/* Collapsible Button Style */
+.collapsible {
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff; /* White text */
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover and Active State */
+.collapsible:hover, .collapsible.active {
+    background-color: #333333; /* Slightly lighter dark shade */
+    color: #f1f1f1; /* Light gray text */
+}
+
+/* Content Style */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #2a2a2a; /* Dark background for content */
+    color: #e0e0e0; /* Light gray text */
+    border-radius: 0 0 6px 6px; /* Rounded bottom corners */
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth expansion */
+}
+
+/* Optional: Add a subtle box-shadow for depth */
+.collapsible, .content {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add a small arrow icon to indicate collapsible state */
+.collapsible::after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 12px;
+    color: #ffffff;
+    float: right;
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Smooth arrow rotation */
+}
+
+.collapsible.active::after {
+    transform: rotate(180deg); /* Rotate arrow when active */
+}
 </style>
 <body>
     <h1>VZGadgets</h1>
@@ -305,18 +357,40 @@ details[open] summary {
         </div>
     </details>
 
-    <h4>Coming soon:</h4>
+<button type="button" class="collapsible">Coming Soon</button>
+<div class="content">
     <ul>
         <li>HiLo, Dice Game, Coin Flip</li>
         <li>Roulette, and other wheel games</li>
         <li>Solitaire</li>
         <li>All Casino Games to Have A Universal Balance</li>
         <li>Fortune Cookie</li>
+        <li>Chess</li>
         <li>Riddle Maker</li>
+        <li>Bingo</li>
         <li>Moon Phase Calculator</li>
         <li>Rock Paper Scissors</li>
-        <li>Stopwatch</li>
+        <li>Stopwatch/Timer</li>
     </ul>
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+
     <div class="suggestions-section">
         <p>We love hearing from you! If you have any suggestions for new gadgets or improvements, please feel free to share them with us.</p>
         <a href="https://bit.ly/vzgadgetssuggestionbox" class="btn btn-suggestions">Send a Suggestion</a>

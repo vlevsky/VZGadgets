@@ -87,28 +87,6 @@ h1 {
     border: 2px solid var(--hover-button-color);
 }
 
-.btn-1 {
-    background: linear-gradient(145deg, #1E90FF, #0073E6);
-}
-.btn-2 {
-    background: linear-gradient(145deg, #00CED1, #008B8B);
-}
-.btn-3 {
-    background: linear-gradient(145deg, #4169E1, #00008B);
-}
-.btn-4 {
-    background: linear-gradient(145deg, #4682B4, #5F9EA0);
-}
-.btn-5 {
-    background: linear-gradient(145deg, #7B68EE, #483D8B);
-}
-.btn-6 {
-    background: linear-gradient(145deg, #00BFFF, #1E90FF);
-}
-.btn-7 {
-    background: linear-gradient(145deg, #5F9EA0, #008B8B);
-}
-
 .btn:hover span {
     transform: translateX(5px);
     opacity: 0.8;

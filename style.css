@@ -331,3 +331,80 @@ details[open] summary {
     transform: scale(1.05);
     border: 2px solid #1E90FF;
 }
+
+@media print {
+    /* Ensure all elements are visible */
+    * {
+        visibility: visible !important;
+    }
+
+    /* Preserve colors and backgrounds */
+    body {
+        background: white !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact; /* Force background colors to print */
+        print-color-adjust: exact; /* Standard property */
+    }
+
+    /* Preserve shadows and other visual effects */
+    h1, .btn, .vz-btn, .vz-collapsible, .suggestions-section, footer {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Ensure buttons and interactive elements look the same */
+    .btn, .vz-btn {
+        background: var(--button-color) !important;
+        color: var(--text-color) !important;
+        border: 2px solid var(--hover-button-color) !important;
+    }
+
+    /* Preserve collapsible section styles */
+    .vz-collapsible {
+        background: linear-gradient(145deg, #2A2A2A, #1A1A1A) !important;
+        color: var(--secondary-color) !important;
+    }
+
+    .vz-collapsible::after {
+        content: '\25BC' !important; /* Ensure the arrow is visible */
+    }
+
+    .vz-content {
+        display: block !important;
+        background: var(--button-color) !important;
+        color: var(--text-color) !important;
+    }
+
+    /* Preserve footer styles */
+    footer {
+        background: var(--primary-color) !important;
+        color: var(--text-color) !important;
+    }
+
+    footer a {
+        color: #007BFF !important;
+    }
+
+    /* Ensure the layout remains intact */
+    .button-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    /* Prevent page breaks inside key elements */
+    .button-container, .vz-content, .suggestions-section {
+        page-break-inside: avoid !important;
+    }
+
+    /* Adjust margins for printing */
+    @page {
+        margin: 1cm; /* Add a margin around the printed page */
+    }
+
+    /* Remove animations and transitions */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

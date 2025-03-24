@@ -40,7 +40,7 @@ h1 {
     margin-bottom: 30px;
     text-transform: uppercase;
     text-shadow: 0 4px 20px var(--glow-color);
-    animation: fadeInUp 1.2s ease-in-out;
+    animation: fadeInUp 1.2s ease-in-out both;
 }
 
 .button-container {
@@ -49,7 +49,7 @@ h1 {
     gap: 20px;
     justify-content: center;
     margin-bottom: 40px;
-    animation: fadeInUp 1.4s ease-in-out;
+    animation: fadeInUp 1.4s ease-in-out 0.2s both;
     width: 100%;
     max-width: 1200px;
 }
@@ -76,6 +76,7 @@ h1 {
     max-width: 220px;
     background: linear-gradient(145deg, #2A2A2A, #1A1A1A);
     transition: all var(--transition-duration) ease-in-out;
+    animation: fadeInUp 0.095s ease-in-out 0.4s both;
 }
 
 .btn:hover {
@@ -102,7 +103,8 @@ h1 {
 footer {
     text-align: center;
     padding: 10px;
-    margin-top: auto; 
+    margin-top: auto;
+    animation: fadeInUp 1.4s ease-in-out 0.6s both;
 }
 
 footer a {
@@ -114,42 +116,11 @@ footer a:hover {
     text-decoration: underline;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .button-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .btn {
-        padding: 12px 30px;
-        font-size: 0.9rem;
-        max-width: 100%;
-    }
-
-    footer {
-        font-size: 0.8rem;
-    }
-}
-
 details {
     margin-bottom: 20px;
     width: 100%;
     max-width: 1200px;
+    animation: fadeInUp 1.4s ease-in-out 0.8s both;
 }
 
 summary {
@@ -172,17 +143,18 @@ details[open] summary {
 }
 
 .suggestions-section {
-    margin: 40px auto; 
+    margin: 40px auto;
     padding: 20px;
     background: var(--button-color);
     border-radius: var(--border-radius);
     text-align: center;
-    max-width: 600px; 
+    max-width: 600px;
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: fadeInUp 1.4s ease-in-out 1s both;
 }
 
 .suggestions-section p {
@@ -212,7 +184,6 @@ details[open] summary {
     box-shadow: 0 0 20px var(--hover-glow-color);
 }
 
-/* Coming Soon Section */
 .collapsible {
     background: linear-gradient(145deg, #2A2A2A, #1A1A1A);
     color: var(--secondary-color);
@@ -231,6 +202,7 @@ details[open] summary {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px var(--glow-color);
+    animation: fadeInUp 1.4s ease-in-out 1.2s both;
 }
 
 .collapsible:hover {
@@ -247,7 +219,7 @@ details[open] summary {
 }
 
 .collapsible::after {
-    content: '\25BC'; /* Down arrow */
+    content: '\25BC';
     font-size: 1rem;
     color: var(--secondary-color);
     float: right;
@@ -256,7 +228,7 @@ details[open] summary {
 }
 
 .collapsible.active::after {
-    transform: rotate(180deg); /* Rotate arrow when active */
+    transform: rotate(180deg);
 }
 
 .content {
@@ -296,18 +268,6 @@ details[open] summary {
     transform: translateX(10px);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .collapsible {
-        font-size: 1rem;
-        padding: 12px 15px;
-    }
-
-    .content ul li {
-        font-size: 0.9rem;
-    }
-}
-
 .view-all-button {
     position: absolute;
     top: 20px;
@@ -323,6 +283,7 @@ details[open] summary {
     transition: all 0.4s ease;
     text-decoration: none;
     background: linear-gradient(145deg, #2A2A2A, #1A1A1A);
+    animation: fadeInUp 1.4s ease-in-out 0.1s both;
 }
 
 .view-all-button:hover {
@@ -332,77 +293,91 @@ details[open] summary {
     border: 2px solid #1E90FF;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .button-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .btn {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+    .collapsible {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+    .content ul li {
+        font-size: 0.9rem;
+    }
+}
+
 @media print {
-    /* Ensure all elements are visible */
     * {
         visibility: visible !important;
     }
-
-    /* Preserve colors and backgrounds */
     body {
         background: white !important;
         color: black !important;
-        -webkit-print-color-adjust: exact; /* Force background colors to print */
-        print-color-adjust: exact; /* Standard property */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
-
-    /* Preserve shadows and other visual effects */
     h1, .btn, .vz-btn, .vz-collapsible, .suggestions-section, footer {
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
-    /* Ensure buttons and interactive elements look the same */
     .btn, .vz-btn {
         background: var(--button-color) !important;
         color: var(--text-color) !important;
         border: 2px solid var(--hover-button-color) !important;
     }
-
-    /* Preserve collapsible section styles */
     .vz-collapsible {
         background: linear-gradient(145deg, #2A2A2A, #1A1A1A) !important;
         color: var(--secondary-color) !important;
     }
-
     .vz-collapsible::after {
-        content: '\25BC' !important; /* Ensure the arrow is visible */
+        content: '\25BC' !important;
     }
-
     .vz-content {
         display: block !important;
         background: var(--button-color) !important;
         color: var(--text-color) !important;
     }
-
-    /* Preserve footer styles */
     footer {
         background: var(--primary-color) !important;
         color: var(--text-color) !important;
     }
-
     footer a {
         color: #007BFF !important;
     }
-
-    /* Ensure the layout remains intact */
     .button-container {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
     }
-
-    /* Prevent page breaks inside key elements */
     .button-container, .vz-content, .suggestions-section {
         page-break-inside: avoid !important;
     }
-
-    /* Adjust margins for printing */
     @page {
-        margin: 1cm; /* Add a margin around the printed page */
+        margin: 1cm;
     }
-
-    /* Remove animations and transitions */
     * {
         animation: none !important;
         transition: none !important;

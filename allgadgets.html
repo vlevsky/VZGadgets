@@ -14,7 +14,6 @@
         <input type="text" id="searchBar" placeholder="Search gadgets..." class="search-bar">
     </div>
     <div class="button-container" id="gadgetsList">
-        <!-- Gadgets will be dynamically populated here -->
     </div>
 
     <footer>Made with 💙 in the Bay Area, CA in 2025 | Contact Us: <a href="mailto:support@vzgadgets.com">support@vzgadgets.com</a></footer>
@@ -79,7 +78,6 @@
         const gadgetsList = document.getElementById('gadgetsList');
         const searchBar = document.getElementById('searchBar');
 
-        // Function to display gadgets
         function displayGadgets(filteredGadgets) {
             gadgetsList.innerHTML = '';
             filteredGadgets.forEach(gadget => {
@@ -91,10 +89,8 @@
             });
         }
 
-        // Initial display of all gadgets
         displayGadgets(gadgets);
 
-        // Search functionality
         searchBar.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             const filteredGadgets = gadgets.filter(gadget => 

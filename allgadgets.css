@@ -98,7 +98,7 @@ h1 {
 }
 
 .btn {
-    flex: 1 1 calc(20% - 40px); /* Five gadgets per row on large screens */
+    flex: 1 1 calc(20% - 40px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,13 +164,13 @@ footer a:hover {
 
 @media (max-width: 1200px) {
     .btn {
-        flex: 1 1 calc(25% - 40px); /* Four gadgets per row */
+        flex: 1 1 calc(25% - 40px);
     }
 }
 
 @media (max-width: 992px) {
     .btn {
-        flex: 1 1 calc(33.333% - 40px); /* Three gadgets per row */
+        flex: 1 1 calc(33.333% - 40px);
     }
 }
 
@@ -180,7 +180,7 @@ footer a:hover {
     }
 
     .btn {
-        flex: 1 1 calc(50% - 20px); /* Two gadgets per row */
+        flex: 1 1 calc(50% - 20px);
         padding: 12px 15px;
         font-size: 0.9rem;
     }
@@ -188,6 +188,6 @@ footer a:hover {
 
 @media (max-width: 480px) {
     .btn {
-        flex: 1 1 100%; /* One gadget per row on thin devices */
+        flex: 1 1 100%; 
     }
 }
